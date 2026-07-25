@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-bg-primary text-text-primary;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .grid-container {
+    @apply mx-auto max-w-container px-6 lg:px-12;
+  }
+
+  .section-spacing {
+    @apply py-section lg:py-section-lg;
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(12px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-subtle {
+    background: radial-gradient(circle at 50% 0%, rgba(167, 255, 0, 0.08) 0%, transparent 50%);
+  }
+}
