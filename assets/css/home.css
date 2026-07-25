@@ -1,469 +1,784 @@
-/*
- * Professional Logistics Platform - Clean Modern Design
- * Astra remains responsible for the default layout, header, colours, and
- * responsive behaviour. Add these classes only to blocks that need them.
- */
+/* ============================================================================
+   ENVIAR SOLUTIONS - MODERN DARK PREMIUM LOGISTICS THEME
+   ============================================================================ */
 
 :root {
-	--enviar-accent: #5dbb46;
-	--enviar-accent-light: #76bf4b;
-	--enviar-primary: #12271e;
-	--enviar-secondary: #13211e;
-	--enviar-ink: #16311d;
-	--enviar-text: #fff;
-	--enviar-text-secondary: rgba(255, 255, 255, .88);
-	--enviar-border: #e2e8e3;
-	--enviar-success: #5dbb46;
-	--enviar-success-light: #9bd578;
+	/* Main Palette */
+	--bg-primary: #0B1012;
+	--bg-secondary: #111719;
+	--bg-elevated: #151C1F;
+	--border-color: #283236;
+	--text-primary: #F7F8F8;
+	--text-muted: #AAB4B8;
+	--accent-lime: #A7FF00;
+	--accent-hover: #B7FF33;
+	
+	/* Spacing */
+	--section-padding: 88px;
+	--max-width: 1180px;
 }
 
-/* Modern Hero Banner: Clean, professional logistics interface.
- * This is deliberately scoped to the first homepage container only. */
+/* ============================================================================
+   GLOBAL STYLES
+   ============================================================================ */
+
+body.home {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+/* ============================================================================
+   HEADER STYLING
+   ============================================================================ */
+
+body.home #masthead {
+	background-color: var(--bg-elevated);
+	border-bottom: 1px solid var(--border-color);
+	backdrop-filter: blur(8px);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	height: 72px;
+	display: flex;
+	align-items: center;
+}
+
+body.home #masthead .site-branding {
+	margin-right: auto;
+}
+
+body.home #masthead .site-logo {
+	max-height: 48px;
+}
+
+body.home #masthead .site-title {
+	color: var(--text-primary);
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: -0.5px;
+}
+
+body.home #masthead nav {
+	display: flex;
+	gap: 48px;
+	align-items: center;
+	margin-right: 32px;
+}
+
+body.home #masthead nav a {
+	color: var(--text-muted);
+	text-decoration: none;
+	font-size: 15px;
+	transition: color 200ms ease;
+	vertical-align: center;
+}
+
+body.home #masthead nav a:hover {
+	color: var(--accent-lime);
+}
+
+body.home #masthead .ast-button,
+body.home #masthead .ast-custom-button {
+	background-color: var(--accent-lime);
+	color: #000;
+	border: none;
+	border-radius: 6px;
+	padding: 10px 20px;
+	font-weight: 600;
+	font-size: 14px;
+	transition: all 200ms ease;
+}
+
+body.home #masthead .ast-button:hover,
+body.home #masthead .ast-custom-button:hover {
+	background-color: var(--accent-hover);
+	transform: translateY(-1px);
+}
+
+/* ============================================================================
+   HERO SECTION - SPLIT LAYOUT
+   ============================================================================ */
+
 body.home .entry-content > .wp-block-spectra-container:first-child,
 body.home .entry-content > .wp-block-uagb-container:first-child {
-	display: flex;
-	flex-direction: column;
+	background-color: var(--bg-primary) !important;
+	background-image: 
+		radial-gradient(circle at 40% 10%, rgba(167, 255, 0, 0.08), transparent 40%),
+		linear-gradient(90deg, var(--bg-primary) 0%, var(--bg-primary) 48%, transparent 100%);
+	min-height: 650px !important;
+	padding: 88px 56px !important;
+	margin-bottom: 0 !important;
+	border: none !important;
+	display: grid !important;
+	grid-template-columns: 1fr 1fr;
+	gap: 64px;
 	align-items: center;
-	justify-content: center;
-	/* A confident full hero on desktop; never forces excessive height on mobile. */
-	min-height: clamp(680px, 80vh, 900px) !important;
-	padding: 120px 32px 100px !important;
-	overflow: hidden;
-	isolation: isolate;
-	border-bottom: 1px solid var(--enviar-border);
-	background-color: var(--enviar-primary) !important;
-	background-image:
-		radial-gradient(ellipse at 50% 0%, rgba(112, 182, 77, .25), transparent 48%),
-		radial-gradient(circle at 8% 92%, rgba(83, 145, 61, .13), transparent 26rem),
-		linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px),
-		linear-gradient(135deg, #1b382b 0%, #12271e 58%, #10231b 100%);
-	background-position: center !important;
-	background-size: cover !important;
-	text-align: center;
+	max-width: none !important;
+	width: 100%;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child::before,
 body.home .entry-content > .wp-block-spectra-container:first-child::after,
-body.home .entry-content > .wp-block-uagb-container:first-child .uagb-container__overlay {
-	background-image: none !important;
-	background-color: transparent !important;
+body.home .entry-content > .wp-block-uagb-container:first-child::before {
+	display: none !important;
 }
 
-body.home .entry-content > .wp-block-spectra-container:first-child > *,
-body.home .entry-content > .wp-block-uagb-container:first-child > .uagb-container-inner-block {
-	position: relative;
-	width: 100%;
-	max-width: 920px;
-	margin-inline: auto;
+/* Hero Left Column */
+body.home .entry-content > .wp-block-spectra-container:first-child > *:not(:last-child),
+body.home .entry-content > .wp-block-uagb-container:first-child > *:not(:last-child) {
+	grid-column: 1;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child h5,
 body.home .entry-content > .wp-block-uagb-container:first-child h5 {
 	display: inline-flex;
 	align-items: center;
-	width: auto;
-	margin: 0 0 22px;
-	padding: 7px 12px;
-	border: 1px solid rgba(214, 244, 200, .34);
+	gap: 8px;
+	padding: 8px 12px;
+	background: rgba(167, 255, 0, 0.08);
+	border: 1px solid rgba(167, 255, 0, 0.3);
 	border-radius: 999px;
-	background: rgba(9, 27, 19, .22);
-	color: #f1faed !important;
-	font-size: 13px;
+	color: var(--accent-lime) !important;
+	font-size: 12px;
 	font-weight: 700;
-	line-height: 1.3;
-	letter-spacing: .01em;
-	text-transform: none;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin: 0 0 24px 0 !important;
+	width: fit-content;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child h5::before,
 body.home .entry-content > .wp-block-uagb-container:first-child h5::before {
-	width: 7px;
-	height: 7px;
-	margin-right: 8px;
+	content: "" !important;
+	width: 6px;
+	height: 6px;
+	background: var(--accent-lime);
 	border-radius: 50%;
-	background: #9bd578;
-	content: "";
+	margin-right: 4px;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child h1,
 body.home .entry-content > .wp-block-uagb-container:first-child h1 {
-	max-width: 780px;
-	margin: 0 auto;
-	color: #fff !important;
-	font-size: clamp(44px, 5vw, 66px) !important;
-	font-weight: 700;
-	line-height: 1.08;
-	letter-spacing: -.03em;
-	text-wrap: balance;
-	text-transform: none;
+	font-size: 56px !important;
+	font-weight: 700 !important;
+	line-height: 1.15 !important;
+	letter-spacing: -1px !important;
+	margin: 0 0 24px 0 !important;
+	color: var(--text-primary) !important;
+	max-width: 100% !important;
+	text-align: left !important;
 }
 
-body.home .entry-content > .wp-block-spectra-container:first-child > p,
-body.home .entry-content > .wp-block-uagb-container:first-child > p {
-	max-width: 660px;
-	margin: 24px auto 0;
-	color: rgba(255, 255, 255, .88) !important;
+body.home .entry-content > .wp-block-spectra-container:first-child p,
+body.home .entry-content > .wp-block-uagb-container:first-child p {
 	font-size: 17px !important;
-	line-height: 1.65;
-	text-wrap: pretty;
+	line-height: 1.6 !important;
+	color: var(--text-muted) !important;
+	margin: 0 0 32px 0 !important;
+	max-width: 100% !important;
+	text-align: left !important;
 }
 
+/* Hero Buttons */
 body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
 body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
-	align-self: center;
-	width: auto;
-	margin-top: 32px;
+	display: flex;
+	gap: 16px;
+	margin-top: 32px !important;
+	margin-bottom: 0 !important;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child .wp-block-spectra-button,
 body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__link {
-	min-height: 50px;
-	padding: 14px 25px;
-	border: 1px solid #76bf4b;
-	border-radius: 7px;
-	background: #76bf4b;
-	box-shadow: none;
-	color: #fff;
-	font-weight: 700;
-	text-transform: none;
-	transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+	padding: 12px 28px !important;
+	background-color: var(--accent-lime) !important;
+	color: #000 !important;
+	border: 1px solid var(--accent-lime) !important;
+	border-radius: 6px !important;
+	font-weight: 600 !important;
+	font-size: 15px !important;
+	transition: all 200ms ease !important;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child .wp-block-spectra-button:hover,
 body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__link:hover {
-	border-color: #8ccc63;
-	background: #8ccc63;
-	color: #fff;
-	transform: translateY(-1px);
+	background-color: var(--accent-hover) !important;
+	border-color: var(--accent-hover) !important;
+	transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-	body.home .entry-content > .wp-block-spectra-container:first-child,
-	body.home .entry-content > .wp-block-uagb-container:first-child {
-		min-height: 0 !important;
-		padding: 80px 24px 72px !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child h1,
-	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
-		font-size: clamp(36px, 10vw, 52px) !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
-	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
-		flex-direction: column;
-		align-items: center;
-	}
+body.home .entry-content > .wp-block-spectra-container:first-child .wp-block-spectra-button.is-secondary,
+body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__link.is-secondary {
+	background-color: transparent !important;
+	border: 1px solid var(--border-color) !important;
+	color: var(--text-primary) !important;
 }
 
-/* Product-led hero: content first, then the genuine Tuma interface below it. */
-@media (min-width: 769px) {
-	body.home .site-content { background: #edf2ee; }
-
-	body.home #masthead .ast-button,
-	body.home #masthead .ast-custom-button,
-	body.home #masthead .ast-custom-button-link {
-		border-color: #a7ff00 !important;
-		background: #a7ff00 !important;
-		color: #10201c !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child,
-	body.home .entry-content > .wp-block-uagb-container:first-child {
-		align-items: center !important;
-		justify-content: flex-start;
-		min-height: 1020px !important;
-		padding: 96px 24px 0 !important;
-		background-color: #151c1f !important;
-		background-image: url("https://enviar.co.ke/wp-content/uploads/2026/07/tuma-dashboard-1024x571.png") !important;
-		background-repeat: no-repeat !important;
-		background-position: center bottom !important;
-		background-size: min(70vw, 840px) auto !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child > *,
-	body.home .entry-content > .wp-block-uagb-container:first-child > .uagb-container-inner-block {
-		align-self: center !important;
-		width: min(100%, 720px) !important;
-		max-width: 720px !important;
-		margin-right: auto !important;
-		margin-left: auto !important;
-		text-align: center !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child h5,
-	body.home .entry-content > .wp-block-uagb-container:first-child h5 {
-		margin-bottom: 20px !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child h1,
-	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
-		max-width: 720px !important;
-		margin-right: auto !important;
-		margin-left: auto !important;
-		font-size: clamp(46px, 4.4vw, 68px) !important;
-		text-align: center !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child > p,
-	body.home .entry-content > .wp-block-uagb-container:first-child > p {
-		max-width: 650px !important;
-		margin-right: auto !important;
-		margin-left: auto !important;
-		text-align: center !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
-	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
-		align-self: center !important;
-		margin-right: auto !important;
-		margin-left: auto !important;
-	}
+body.home .entry-content > .wp-block-spectra-container:first-child .wp-block-spectra-button.is-secondary:hover,
+body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__link.is-secondary:hover {
+	border-color: var(--accent-lime) !important;
+	background-color: rgba(167, 255, 0, 0.08) !important;
 }
 
-/* Contained platform-banner treatment: original Enviar composition with modern refinements */
-@media (min-width: 769px) {
-	body.home .site-content { background: #f8faf8; }
-
-	body.home .entry-content > .wp-block-spectra-container:first-child,
-	body.home .entry-content > .wp-block-uagb-container:first-child {
-		position: relative;
-		isolation: isolate;
-		align-items: flex-start !important;
-		left: 50%;
-		width: 100vw;
-		min-height: 720px !important;
-		margin: 0 0 72px !important;
-		padding: 112px max(56px, calc((100vw - 1420px) / 2)) !important;
-		transform: translateX(-50%);
-		border: 0;
-		border-radius: 0;
-		background-color: #142039 !important;
-		background-image:
-			linear-gradient(90deg, #142039 0%, #142039 41%, rgba(20, 32, 57, .94) 45%, rgba(20, 32, 57, .30) 50%, rgba(20, 32, 57, 0) 57%),
-			url("https://enviar.co.ke/wp-content/uploads/2026/07/tuma-dashboard-1024x571.png") !important;
-		background-repeat: no-repeat !important;
-		background-position: center, right 0 center !important;
-		background-size: cover, min(64vw, 1080px) auto !important;
-		text-align: left;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child::before,
-	body.home .entry-content > .wp-block-uagb-container:first-child::before {
-		display: none !important;
-		content: none;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child > *,
-	body.home .entry-content > .wp-block-uagb-container:first-child > .uagb-container-inner-block {
-		align-self: flex-start !important;
-		z-index: 1;
-		width: min(42vw, 590px) !important;
-		max-width: 590px !important;
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		text-align: left;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child h5,
-	body.home .entry-content > .wp-block-uagb-container:first-child h5 {
-		border-color: rgba(167, 255, 0, .35);
-		background: rgba(167, 255, 0, .08);
-		color: #e8ffcc !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child h1,
-	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
-		max-width: 590px;
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		font-size: clamp(44px, 4vw, 62px) !important;
-		text-align: left !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child > p,
-	body.home .entry-content > .wp-block-uagb-container:first-child > p {
-		max-width: 540px;
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		color: rgba(235, 241, 244, .82) !important;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
-	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
-		align-self: flex-start;
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-	}
+/* Hero Trust Points */
+body.home .entry-content > .wp-block-spectra-container:first-child ul,
+body.home .entry-content > .wp-block-uagb-container:first-child ul {
+	list-style: none;
+	margin-top: 48px;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
-@media (max-width: 768px) {
-	body.home .entry-content > .wp-block-spectra-container:first-child,
-	body.home .entry-content > .wp-block-uagb-container:first-child {
-		border-radius: 0;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	body.home .entry-content > .wp-block-spectra-container:first-child .wp-block-spectra-button,
-	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__link {
-		transition: none;
-	}
-}
-
-
-
-/* Trust & Benefits Section Styling */
-.enviar-logistics-label {
-	display: inline-flex;
+body.home .entry-content > .wp-block-spectra-container:first-child li,
+body.home .entry-content > .wp-block-uagb-container:first-child li {
+	font-size: 14px;
+	color: var(--text-muted);
+	display: flex;
 	align-items: center;
 	gap: 8px;
-	margin-bottom: 12px;
-	color: var(--enviar-accent);
-	font-size: 12px;
+}
+
+body.home .entry-content > .wp-block-spectra-container:first-child li::before,
+body.home .entry-content > .wp-block-uagb-container:first-child li::before {
+	content: "✓";
+	color: var(--accent-lime);
 	font-weight: 700;
-	letter-spacing: .04em;
-	text-transform: uppercase;
+	font-size: 16px;
 }
 
-.enviar-logistics-label::before {
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: var(--enviar-accent);
-	content: "";
+/* Hero Right Column - Dashboard */
+body.home .entry-content > .wp-block-spectra-container:first-child img,
+body.home .entry-content > .wp-block-uagb-container:first-child img {
+	grid-column: 2;
+	grid-row: 1 / -1;
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-.enviar-logistics-card {
-	height: 100%;
-	padding: 26px;
-	border: 1px solid var(--enviar-border);
-	border-radius: 8px;
-	background: #fff;
-	box-shadow: 0 8px 22px rgba(22, 49, 29, .05);
-	transition: all 160ms ease;
+/* ============================================================================
+   VALUE STRIP SECTION
+   ============================================================================ */
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(2),
+body.home .entry-content > .wp-block-uagb-container:nth-child(2) {
+	background-color: var(--bg-secondary) !important;
+	border-top: 1px solid var(--border-color);
+	border-bottom: 1px solid var(--border-color);
+	padding: 64px 56px !important;
+	margin: 0 !important;
 }
 
-.enviar-logistics-card:hover {
-	border-color: var(--enviar-accent);
-	background: #fff;
-	transform: translateY(-2px);
-	box-shadow: 0 12px 32px rgba(22, 49, 29, .12);
+body.home .entry-content > .wp-block-spectra-container:nth-child(2) .wp-block-columns,
+body.home .entry-content > .wp-block-uagb-container:nth-child(2) .wp-block-columns {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 32px;
+	max-width: var(--max-width);
+	margin: 0 auto;
 }
 
-.enviar-logistics-card h3 {
-	margin-top: 0;
-	color: var(--enviar-ink);
+body.home .entry-content > .wp-block-spectra-container:nth-child(2) .wp-block-column,
+body.home .entry-content > .wp-block-uagb-container:nth-child(2) .wp-block-column {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
-.enviar-logistics-card p {
-	color: #666;
+body.home .entry-content > .wp-block-spectra-container:nth-child(2) h3,
+body.home .entry-content > .wp-block-uagb-container:nth-child(2) h3 {
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(2) p,
+body.home .entry-content > .wp-block-uagb-container:nth-child(2) p {
+	font-size: 14px;
+	color: var(--text-muted);
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* ============================================================================
+   PLATFORM SECTION - FEATURE CARDS
+   ============================================================================ */
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(3),
+body.home .entry-content > .wp-block-uagb-container:nth-child(3) {
+	background-color: var(--bg-primary) !important;
+	padding: var(--section-padding) 56px !important;
+	margin: 0 !important;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(3) .wp-block-columns,
+body.home .entry-content > .wp-block-uagb-container:nth-child(3) .wp-block-columns {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+	max-width: var(--max-width);
+	margin: 0 auto;
+}
+
+.enviar-feature-card {
+	background-color: var(--bg-elevated);
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 32px;
+	transition: all 200ms ease;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.enviar-feature-card:hover {
+	border-color: var(--accent-lime);
+	background-color: rgba(167, 255, 0, 0.04);
+	transform: translateY(-4px);
+}
+
+.enviar-feature-card h3 {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+.enviar-feature-card p {
+	font-size: 15px;
+	color: var(--text-muted);
+	margin: 0;
 	line-height: 1.6;
 }
 
-.enviar-logistics-card p:last-child {
-	margin-bottom: 0;
+/* ============================================================================
+   ROLE-BASED SOLUTIONS SECTION
+   ============================================================================ */
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(4),
+body.home .entry-content > .wp-block-uagb-container:nth-child(4) {
+	background-color: var(--bg-secondary) !important;
+	padding: var(--section-padding) 56px !important;
+	margin: 0 !important;
 }
 
-.enviar-logistics-list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.enviar-logistics-list li {
-	margin: 0 0 10px;
-	color: #666;
-}
-
-.enviar-logistics-list li::before {
-	margin-right: 9px;
-	color: var(--enviar-accent);
-	content: "✓";
+body.home .entry-content > .wp-block-spectra-container:nth-child(4) h2,
+body.home .entry-content > .wp-block-uagb-container:nth-child(4) h2 {
+	text-align: center;
+	font-size: 48px;
 	font-weight: 700;
+	color: var(--text-primary);
+	margin-bottom: 56px;
 }
 
-.enviar-dashboard-frame {
-	padding: 9px;
-	border: 1px solid var(--enviar-border);
-	border-radius: 8px;
-	background: #fff;
-	box-shadow: 0 14px 32px rgba(22, 49, 29, .1);
+.enviar-role-tabs {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	margin-bottom: 48px;
+	flex-wrap: wrap;
+	max-width: var(--max-width);
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.enviar-dashboard-frame img {
-	display: block;
+.enviar-role-tabs button {
+	padding: 10px 20px;
+	background-color: transparent;
+	border: 1px solid var(--border-color);
+	color: var(--text-muted);
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	transition: all 200ms ease;
+}
+
+.enviar-role-tabs button:hover,
+.enviar-role-tabs button.active {
+	background-color: var(--accent-lime);
+	color: #000;
+	border-color: var(--accent-lime);
+}
+
+/* ============================================================================
+   HOW IT WORKS SECTION
+   ============================================================================ */
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(5),
+body.home .entry-content > .wp-block-uagb-container:nth-child(5) {
+	background-color: var(--bg-primary) !important;
+	padding: var(--section-padding) 56px !important;
+	margin: 0 !important;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(5) h2,
+body.home .entry-content > .wp-block-uagb-container:nth-child(5) h2 {
+	text-align: center;
+	font-size: 48px;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin-bottom: 56px;
+}
+
+.enviar-steps {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	position: relative;
+}
+
+.enviar-steps::before {
+	content: "";
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, var(--border-color) 0%, var(--accent-lime) 25%, var(--accent-lime) 75%, var(--border-color) 100%);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.enviar-step {
+	position: relative;
+	z-index: 2;
+	background-color: var(--bg-elevated);
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 32px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.enviar-step-number {
+	width: 40px;
+	height: 40px;
+	background-color: var(--accent-lime);
+	color: #000;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 18px;
+	margin: 0 auto;
+}
+
+.enviar-step h3 {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+.enviar-step p {
+	font-size: 14px;
+	color: var(--text-muted);
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* ============================================================================
+   WHY ENVIAR SECTION
+   ============================================================================ */
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(6),
+body.home .entry-content > .wp-block-uagb-container:nth-child(6) {
+	background-color: var(--bg-secondary) !important;
+	padding: var(--section-padding) 56px !important;
+	margin: 0 !important;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 64px;
+	align-items: center;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(6) h2,
+body.home .entry-content > .wp-block-uagb-container:nth-child(6) h2 {
+	font-size: 44px;
+	font-weight: 700;
+	color: var(--text-primary);
+	line-height: 1.2;
+	margin-bottom: 24px;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(6) p,
+body.home .entry-content > .wp-block-uagb-container:nth-child(6) p {
+	font-size: 16px;
+	color: var(--text-muted);
+	line-height: 1.7;
+	margin-bottom: 32px;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(6) ul,
+body.home .entry-content > .wp-block-uagb-container:nth-child(6) ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(6) li,
+body.home .entry-content > .wp-block-uagb-container:nth-child(6) li {
+	font-size: 15px;
+	color: var(--text-muted);
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(6) li::before,
+body.home .entry-content > .wp-block-uagb-container:nth-child(6) li::before {
+	content: "✓";
+	color: var(--accent-lime);
+	font-weight: 700;
+	font-size: 18px;
+	flex-shrink: 0;
+	margin-top: -2px;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(6) img,
+body.home .entry-content > .wp-block-uagb-container:nth-child(6) img {
 	width: 100%;
 	height: auto;
-	border-radius: 4px;
+	border-radius: 12px;
+	border: 1px solid var(--border-color);
 }
+
+/* ============================================================================
+   ABOUT SECTION
+   ============================================================================ */
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(7),
+body.home .entry-content > .wp-block-uagb-container:nth-child(7) {
+	background-color: var(--bg-primary) !important;
+	padding: var(--section-padding) 56px !important;
+	margin: 0 !important;
+}
+
+/* ============================================================================
+   CONTACT SECTION
+   ============================================================================ */
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(8),
+body.home .entry-content > .wp-block-uagb-container:nth-child(8) {
+	background-color: var(--bg-secondary) !important;
+	padding: var(--section-padding) 56px !important;
+	margin: 0 !important;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(8) h2,
+body.home .entry-content > .wp-block-uagb-container:nth-child(8) h2 {
+	text-align: center;
+	font-size: 44px;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin-bottom: 24px;
+}
+
+body.home .entry-content > .wp-block-spectra-container:nth-child(8) p,
+body.home .entry-content > .wp-block-uagb-container:nth-child(8) p {
+	text-align: center;
+	font-size: 16px;
+	color: var(--text-muted);
+	margin-bottom: 48px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.enviar-form-wrapper {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.enviar-form-wrapper form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.enviar-form-wrapper input,
+.enviar-form-wrapper textarea,
+.enviar-form-wrapper select {
+	background-color: var(--bg-elevated);
+	border: 1px solid var(--border-color);
+	color: var(--text-primary);
+	padding: 12px 16px;
+	border-radius: 6px;
+	font-size: 15px;
+	transition: all 200ms ease;
+	font-family: inherit;
+}
+
+.enviar-form-wrapper input:focus,
+.enviar-form-wrapper textarea:focus,
+.enviar-form-wrapper select:focus {
+	outline: none;
+	border-color: var(--accent-lime);
+	background-color: rgba(167, 255, 0, 0.04);
+}
+
+.enviar-form-wrapper textarea {
+	grid-column: 1 / -1;
+	min-height: 120px;
+	resize: vertical;
+}
+
+.enviar-form-wrapper button {
+	grid-column: 1 / -1;
+	background-color: var(--accent-lime);
+	color: #000;
+	border: none;
+	padding: 12px 28px;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 15px;
+	cursor: pointer;
+	transition: all 200ms ease;
+}
+
+.enviar-form-wrapper button:hover {
+	background-color: var(--accent-hover);
+	transform: translateY(-2px);
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+body.home #colophon {
+	background-color: var(--bg-elevated);
+	border-top: 1px solid var(--border-color);
+	padding: 56px;
+	color: var(--text-muted);
+	font-size: 14px;
+}
+
+/* ============================================================================
+   MOBILE RESPONSIVE
+   ============================================================================ */
 
 @media (max-width: 768px) {
-	.enviar-logistics-card { 
-		padding: 24px;
+	:root {
+		--section-padding: 56px;
 	}
-}
 
-/* Final desktop composition: a restrained product preview alongside the copy. */
-@media (min-width: 769px) {
+	body.home #masthead {
+		height: auto;
+		padding: 16px;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	body.home #masthead nav {
+		display: none;
+	}
+
 	body.home .entry-content > .wp-block-spectra-container:first-child,
 	body.home .entry-content > .wp-block-uagb-container:first-child {
-		align-items: flex-start !important;
-		justify-content: center;
-		min-height: 590px !important;
-		margin-bottom: -24px !important;
-		padding: 82px max(56px, calc((100vw - 1420px) / 2)) !important;
-		background-color: #13211e !important;
-		background-image:
-			linear-gradient(90deg, #13211e 0%, #13211e 43%, rgba(19, 33, 30, .91) 49%, rgba(19, 33, 30, .20) 55%, rgba(19, 33, 30, 0) 61%),
-			url("https://enviar.co.ke/wp-content/uploads/2026/07/tuma-dashboard-1024x571.png") !important;
-		background-repeat: no-repeat !important;
-		background-position: center, right 3% center !important;
-		background-size: cover, min(52vw, 860px) auto !important;
-		box-shadow: 0 22px 42px rgba(12, 25, 22, .18);
-		z-index: 2;
-	}
-
-	body.home .entry-content > .wp-block-spectra-container:first-child > *,
-	body.home .entry-content > .wp-block-uagb-container:first-child > .uagb-container-inner-block {
-		align-self: flex-start !important;
-		width: min(42vw, 570px) !important;
-		max-width: 570px !important;
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		text-align: left;
+		grid-template-columns: 1fr;
+		gap: 40px;
+		padding: 56px 24px !important;
+		min-height: auto !important;
+		background-image: none;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:first-child h1,
 	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		font-size: clamp(42px, 3.7vw, 58px) !important;
-		text-align: left !important;
+		font-size: 38px !important;
 	}
 
-	body.home .entry-content > .wp-block-spectra-container:first-child > p,
-	body.home .entry-content > .wp-block-uagb-container:first-child > p {
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		text-align: left !important;
+	body.home .entry-content > .wp-block-spectra-container:first-child img,
+	body.home .entry-content > .wp-block-uagb-container:first-child img {
+		grid-column: auto;
+		grid-row: auto;
 	}
 
-	body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
-	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
-		align-self: flex-start;
-		margin: 28px 0 0 !important;
-		text-align: left !important;
+	body.home .entry-content > .wp-block-spectra-container:nth-child(2) .wp-block-columns,
+	body.home .entry-content > .wp-block-uagb-container:nth-child(2) .wp-block-columns {
+		grid-template-columns: 1fr;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:nth-child(3) .wp-block-columns,
+	body.home .entry-content > .wp-block-uagb-container:nth-child(3) .wp-block-columns {
+		grid-template-columns: 1fr;
+	}
+
+	.enviar-steps {
+		grid-template-columns: 1fr;
+	}
+
+	.enviar-steps::before {
+		display: none;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:nth-child(6),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(6) {
+		grid-template-columns: 1fr;
+		gap: 32px;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:nth-child(2),
-	body.home .entry-content > .wp-block-uagb-container:nth-child(2) {
-		padding-top: 116px !important;
-		background: #edf2ee;
+	body.home .entry-content > .wp-block-uagb-container:nth-child(2),
+	body.home .entry-content > .wp-block-spectra-container:nth-child(3),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(3),
+	body.home .entry-content > .wp-block-spectra-container:nth-child(4),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(4),
+	body.home .entry-content > .wp-block-spectra-container:nth-child(5),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(5),
+	body.home .entry-content > .wp-block-spectra-container:nth-child(6),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(6),
+	body.home .entry-content > .wp-block-spectra-container:nth-child(7),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(7),
+	body.home .entry-content > .wp-block-spectra-container:nth-child(8),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(8) {
+		padding: 56px 24px !important;
+	}
+
+	.enviar-form-wrapper form {
+		grid-template-columns: 1fr;
+	}
+
+	.enviar-form-wrapper textarea {
+		grid-column: auto;
+	}
+
+	.enviar-form-wrapper button {
+		grid-column: auto;
 	}
 }
 
-@media (max-width: 768px) {
-	.enviar-logistics-card { padding: 21px; }
+@media (max-width: 480px) {
+	body.home .entry-content > .wp-block-spectra-container:first-child h1,
+	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
+		font-size: 32px !important;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:nth-child(5) h2,
+	body.home .entry-content > .wp-block-uagb-container:nth-child(5) h2,
+	body.home .entry-content > .wp-block-spectra-container:nth-child(4) h2,
+	body.home .entry-content > .wp-block-uagb-container:nth-child(4) h2 {
+		font-size: 32px !important;
+	}
+
+	body.home #masthead nav {
+		gap: 12px;
+		margin-right: 12px;
+	}
 }
