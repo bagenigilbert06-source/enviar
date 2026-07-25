@@ -5,16 +5,16 @@
  */
 
 :root {
-	--enviar-accent: #ff6b35;
-	--enviar-accent-light: #ff8c66;
-	--enviar-primary: #0f172a;
-	--enviar-secondary: #1e293b;
-	--enviar-ink: #0f172a;
-	--enviar-text: #f8fafc;
-	--enviar-text-secondary: #cbd5e1;
-	--enviar-border: #334155;
-	--enviar-success: #10b981;
-	--enviar-success-light: #6ee7b7;
+	--enviar-accent: #5dbb46;
+	--enviar-accent-light: #76bf4b;
+	--enviar-primary: #12271e;
+	--enviar-secondary: #13211e;
+	--enviar-ink: #16311d;
+	--enviar-text: #fff;
+	--enviar-text-secondary: rgba(255, 255, 255, .88);
+	--enviar-border: #e2e8e3;
+	--enviar-success: #5dbb46;
+	--enviar-success-light: #9bd578;
 }
 
 /* Modern Hero Banner: Clean, professional logistics interface.
@@ -33,9 +33,11 @@ body.home .entry-content > .wp-block-uagb-container:first-child {
 	border-bottom: 1px solid var(--enviar-border);
 	background-color: var(--enviar-primary) !important;
 	background-image:
-		linear-gradient(135deg, rgba(255, 107, 53, .08) 0%, transparent 40%),
-		linear-gradient(225deg, rgba(16, 185, 129, .05) 0%, transparent 50%),
-		radial-gradient(ellipse 800px 600px at 50% 0%, rgba(255, 107, 53, .04), transparent 70%);
+		radial-gradient(ellipse at 50% 0%, rgba(112, 182, 77, .25), transparent 48%),
+		radial-gradient(circle at 8% 92%, rgba(83, 145, 61, .13), transparent 26rem),
+		linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px),
+		linear-gradient(135deg, #1b382b 0%, #12271e 58%, #10231b 100%);
 	background-position: center !important;
 	background-size: cover !important;
 	text-align: center;
@@ -61,86 +63,79 @@ body.home .entry-content > .wp-block-uagb-container:first-child h5 {
 	display: inline-flex;
 	align-items: center;
 	width: auto;
-	margin: 0 0 28px;
-	padding: 8px 16px;
-	border: 1px solid rgba(255, 107, 53, .4);
+	margin: 0 0 22px;
+	padding: 7px 12px;
+	border: 1px solid rgba(214, 244, 200, .34);
 	border-radius: 999px;
-	background: rgba(255, 107, 53, .08);
-	color: var(--enviar-accent-light) !important;
-	font-size: 12px;
-	font-weight: 600;
-	line-height: 1.4;
-	letter-spacing: .05em;
-	text-transform: uppercase;
+	background: rgba(9, 27, 19, .22);
+	color: #f1faed !important;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: .01em;
+	text-transform: none;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child h5::before,
 body.home .entry-content > .wp-block-uagb-container:first-child h5::before {
-	width: 6px;
-	height: 6px;
-	margin-right: 10px;
+	width: 7px;
+	height: 7px;
+	margin-right: 8px;
 	border-radius: 50%;
-	background: var(--enviar-accent);
+	background: #9bd578;
 	content: "";
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child h1,
 body.home .entry-content > .wp-block-uagb-container:first-child h1 {
-	max-width: 880px;
+	max-width: 780px;
 	margin: 0 auto;
-	color: var(--enviar-text) !important;
-	font-size: clamp(48px, 5.5vw, 72px) !important;
-	font-weight: 800;
-	line-height: 1.1;
-	letter-spacing: -.02em;
+	color: #fff !important;
+	font-size: clamp(44px, 5vw, 66px) !important;
+	font-weight: 700;
+	line-height: 1.08;
+	letter-spacing: -.03em;
 	text-wrap: balance;
 	text-transform: none;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child > p,
 body.home .entry-content > .wp-block-uagb-container:first-child > p {
-	max-width: 720px;
-	margin: 32px auto 0;
-	color: var(--enviar-text-secondary) !important;
-	font-size: 18px !important;
-	line-height: 1.7;
+	max-width: 660px;
+	margin: 24px auto 0;
+	color: rgba(255, 255, 255, .88) !important;
+	font-size: 17px !important;
+	line-height: 1.65;
 	text-wrap: pretty;
-	font-weight: 400;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
 body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
 	align-self: center;
 	width: auto;
-	margin-top: 44px;
-	display: flex;
-	gap: 16px;
-	flex-wrap: wrap;
-	justify-content: center;
+	margin-top: 32px;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child .wp-block-spectra-button,
 body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__link {
-	min-height: 54px;
-	padding: 16px 32px;
-	border: 1px solid var(--enviar-accent);
-	border-radius: 8px;
-	background: var(--enviar-accent);
-	box-shadow: 0 4px 16px rgba(255, 107, 53, .2);
+	min-height: 50px;
+	padding: 14px 25px;
+	border: 1px solid #76bf4b;
+	border-radius: 7px;
+	background: #76bf4b;
+	box-shadow: none;
 	color: #fff;
-	font-weight: 600;
-	font-size: 16px;
+	font-weight: 700;
 	text-transform: none;
-	transition: all 200ms ease;
+	transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 body.home .entry-content > .wp-block-spectra-container:first-child .wp-block-spectra-button:hover,
 body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__link:hover {
-	border-color: var(--enviar-accent-light);
-	background: var(--enviar-accent-light);
+	border-color: #8ccc63;
+	background: #8ccc63;
 	color: #fff;
-	transform: translateY(-2px);
-	box-shadow: 0 8px 24px rgba(255, 107, 53, .3);
+	transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
@@ -162,69 +157,151 @@ body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__li
 	}
 }
 
-/* Product-led hero: content and dashboard layout. */
+/* Product-led hero: content first, then the genuine Tuma interface below it. */
 @media (min-width: 769px) {
-	body.home .site-content { background: var(--enviar-secondary); }
+	body.home .site-content { background: #edf2ee; }
 
 	body.home #masthead .ast-button,
 	body.home #masthead .ast-custom-button,
 	body.home #masthead .ast-custom-button-link {
-		border-color: var(--enviar-accent) !important;
-		background: var(--enviar-accent) !important;
-		color: #fff !important;
+		border-color: #a7ff00 !important;
+		background: #a7ff00 !important;
+		color: #10201c !important;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:first-child,
 	body.home .entry-content > .wp-block-uagb-container:first-child {
 		align-items: center !important;
 		justify-content: flex-start;
-		min-height: 680px !important;
-		padding: 80px max(48px, calc((100vw - 1400px) / 2)) !important;
-		background-color: var(--enviar-primary) !important;
+		min-height: 1020px !important;
+		padding: 96px 24px 0 !important;
+		background-color: #151c1f !important;
 		background-image: url("https://enviar.co.ke/wp-content/uploads/2026/07/tuma-dashboard-1024x571.png") !important;
 		background-repeat: no-repeat !important;
-		background-position: right 0 center !important;
-		background-size: min(50vw, 750px) auto !important;
+		background-position: center bottom !important;
+		background-size: min(70vw, 840px) auto !important;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:first-child > *,
 	body.home .entry-content > .wp-block-uagb-container:first-child > .uagb-container-inner-block {
 		align-self: center !important;
-		width: min(45%, 580px) !important;
-		max-width: 580px !important;
+		width: min(100%, 720px) !important;
+		max-width: 720px !important;
 		margin-right: auto !important;
-		margin-left: 0 !important;
-		text-align: left !important;
+		margin-left: auto !important;
+		text-align: center !important;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:first-child h5,
 	body.home .entry-content > .wp-block-uagb-container:first-child h5 {
-		margin-bottom: 24px !important;
+		margin-bottom: 20px !important;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:first-child h1,
 	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
-		max-width: 580px !important;
+		max-width: 720px !important;
+		margin-right: auto !important;
+		margin-left: auto !important;
+		font-size: clamp(46px, 4.4vw, 68px) !important;
+		text-align: center !important;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child > p,
+	body.home .entry-content > .wp-block-uagb-container:first-child > p {
+		max-width: 650px !important;
+		margin-right: auto !important;
+		margin-left: auto !important;
+		text-align: center !important;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
+	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
+		align-self: center !important;
+		margin-right: auto !important;
+		margin-left: auto !important;
+	}
+}
+
+/* Contained platform-banner treatment: original Enviar composition with modern refinements */
+@media (min-width: 769px) {
+	body.home .site-content { background: #f8faf8; }
+
+	body.home .entry-content > .wp-block-spectra-container:first-child,
+	body.home .entry-content > .wp-block-uagb-container:first-child {
+		position: relative;
+		isolation: isolate;
+		align-items: flex-start !important;
+		left: 50%;
+		width: 100vw;
+		min-height: 720px !important;
+		margin: 0 0 72px !important;
+		padding: 112px max(56px, calc((100vw - 1420px) / 2)) !important;
+		transform: translateX(-50%);
+		border: 0;
+		border-radius: 0;
+		background-color: #142039 !important;
+		background-image:
+			linear-gradient(90deg, #142039 0%, #142039 41%, rgba(20, 32, 57, .94) 45%, rgba(20, 32, 57, .30) 50%, rgba(20, 32, 57, 0) 57%),
+			url("https://enviar.co.ke/wp-content/uploads/2026/07/tuma-dashboard-1024x571.png") !important;
+		background-repeat: no-repeat !important;
+		background-position: center, right 0 center !important;
+		background-size: cover, min(64vw, 1080px) auto !important;
+		text-align: left;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child::before,
+	body.home .entry-content > .wp-block-uagb-container:first-child::before {
+		display: none !important;
+		content: none;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child > *,
+	body.home .entry-content > .wp-block-uagb-container:first-child > .uagb-container-inner-block {
+		align-self: flex-start !important;
+		z-index: 1;
+		width: min(42vw, 590px) !important;
+		max-width: 590px !important;
 		margin-right: 0 !important;
 		margin-left: 0 !important;
-		font-size: clamp(48px, 4.2vw, 68px) !important;
+		text-align: left;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child h5,
+	body.home .entry-content > .wp-block-uagb-container:first-child h5 {
+		border-color: rgba(167, 255, 0, .35);
+		background: rgba(167, 255, 0, .08);
+		color: #e8ffcc !important;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child h1,
+	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
+		max-width: 590px;
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		font-size: clamp(44px, 4vw, 62px) !important;
 		text-align: left !important;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:first-child > p,
 	body.home .entry-content > .wp-block-uagb-container:first-child > p {
-		max-width: 560px !important;
+		max-width: 540px;
 		margin-right: 0 !important;
 		margin-left: 0 !important;
-		text-align: left !important;
+		color: rgba(235, 241, 244, .82) !important;
 	}
 
 	body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
 	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
-		align-self: flex-start !important;
-		justify-content: flex-start !important;
+		align-self: flex-start;
 		margin-right: 0 !important;
 		margin-left: 0 !important;
+	}
+}
+
+@media (max-width: 768px) {
+	body.home .entry-content > .wp-block-spectra-container:first-child,
+	body.home .entry-content > .wp-block-uagb-container:first-child {
+		border-radius: 0;
 	}
 }
 
@@ -260,33 +337,29 @@ body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__li
 
 .enviar-logistics-card {
 	height: 100%;
-	padding: 32px;
+	padding: 26px;
 	border: 1px solid var(--enviar-border);
-	border-radius: 12px;
-	background: rgba(30, 41, 59, .6);
-	backdrop-filter: blur(10px);
-	box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
-	transition: all 200ms ease;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 8px 22px rgba(22, 49, 29, .05);
+	transition: all 160ms ease;
 }
 
 .enviar-logistics-card:hover {
 	border-color: var(--enviar-accent);
-	background: rgba(30, 41, 59, .9);
-	transform: translateY(-4px);
+	background: #fff;
+	transform: translateY(-2px);
+	box-shadow: 0 12px 32px rgba(22, 49, 29, .12);
 }
 
 .enviar-logistics-card h3 {
 	margin-top: 0;
-	margin-bottom: 16px;
-	color: var(--enviar-text);
-	font-size: 22px;
-	font-weight: 700;
+	color: var(--enviar-ink);
 }
 
 .enviar-logistics-card p {
-	color: var(--enviar-text-secondary);
+	color: #666;
 	line-height: 1.6;
-	font-size: 15px;
 }
 
 .enviar-logistics-card p:last-child {
@@ -300,34 +373,30 @@ body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__li
 }
 
 .enviar-logistics-list li {
-	margin: 0 0 12px;
-	color: var(--enviar-text-secondary);
-	font-size: 15px;
-	line-height: 1.6;
+	margin: 0 0 10px;
+	color: #666;
 }
 
 .enviar-logistics-list li::before {
-	margin-right: 12px;
-	color: var(--enviar-success);
+	margin-right: 9px;
+	color: var(--enviar-accent);
 	content: "✓";
 	font-weight: 700;
-	font-size: 16px;
 }
 
 .enviar-dashboard-frame {
-	padding: 12px;
+	padding: 9px;
 	border: 1px solid var(--enviar-border);
-	border-radius: 12px;
-	background: rgba(15, 23, 42, .6);
-	box-shadow: 0 16px 40px rgba(0, 0, 0, .3);
-	backdrop-filter: blur(10px);
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 14px 32px rgba(22, 49, 29, .1);
 }
 
 .enviar-dashboard-frame img {
 	display: block;
 	width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: 4px;
 }
 
 @media (max-width: 768px) {
@@ -336,10 +405,65 @@ body.home .entry-content > .wp-block-uagb-container:first-child .uagb-button__li
 	}
 }
 
-/* Results/Benefits Section */
-body.home .entry-content > .wp-block-spectra-container:nth-child(2),
-body.home .entry-content > .wp-block-uagb-container:nth-child(2) {
-	background: linear-gradient(135deg, var(--enviar-primary) 0%, var(--enviar-secondary) 100%) !important;
-	padding-top: 100px !important;
-	padding-bottom: 100px !important;
+/* Final desktop composition: a restrained product preview alongside the copy. */
+@media (min-width: 769px) {
+	body.home .entry-content > .wp-block-spectra-container:first-child,
+	body.home .entry-content > .wp-block-uagb-container:first-child {
+		align-items: flex-start !important;
+		justify-content: center;
+		min-height: 590px !important;
+		margin-bottom: -24px !important;
+		padding: 82px max(56px, calc((100vw - 1420px) / 2)) !important;
+		background-color: #13211e !important;
+		background-image:
+			linear-gradient(90deg, #13211e 0%, #13211e 43%, rgba(19, 33, 30, .91) 49%, rgba(19, 33, 30, .20) 55%, rgba(19, 33, 30, 0) 61%),
+			url("https://enviar.co.ke/wp-content/uploads/2026/07/tuma-dashboard-1024x571.png") !important;
+		background-repeat: no-repeat !important;
+		background-position: center, right 3% center !important;
+		background-size: cover, min(52vw, 860px) auto !important;
+		box-shadow: 0 22px 42px rgba(12, 25, 22, .18);
+		z-index: 2;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child > *,
+	body.home .entry-content > .wp-block-uagb-container:first-child > .uagb-container-inner-block {
+		align-self: flex-start !important;
+		width: min(42vw, 570px) !important;
+		max-width: 570px !important;
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		text-align: left;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child h1,
+	body.home .entry-content > .wp-block-uagb-container:first-child h1 {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		font-size: clamp(42px, 3.7vw, 58px) !important;
+		text-align: left !important;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child > p,
+	body.home .entry-content > .wp-block-uagb-container:first-child > p {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		text-align: left !important;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:first-child .spectra-buttons,
+	body.home .entry-content > .wp-block-uagb-container:first-child .uagb-buttons-repeater {
+		align-self: flex-start;
+		margin: 28px 0 0 !important;
+		text-align: left !important;
+	}
+
+	body.home .entry-content > .wp-block-spectra-container:nth-child(2),
+	body.home .entry-content > .wp-block-uagb-container:nth-child(2) {
+		padding-top: 116px !important;
+		background: #edf2ee;
+	}
+}
+
+@media (max-width: 768px) {
+	.enviar-logistics-card { padding: 21px; }
 }
