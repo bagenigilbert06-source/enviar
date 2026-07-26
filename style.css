@@ -1,10 +1,1560 @@
 /*
-Theme Name: Enviar Child
+Theme Name: Enviar Child Blocksy
 Theme URI: https://enviar.co.ke
-Description: Custom Astra child theme for Enviar Solutions.
+Description: Blocksy child theme for Enviar Solutions. Page content and layouts are managed with Elementor.
 Author: Enviar Solutions
 Author URI: https://enviar.co.ke
-Template: astra
-Version: 1.0.0
-Text Domain: enviar-child
+Template: blocksy
+Version: 3.0.0
+Text Domain: enviar-child-blocksy
 */
+
+/*
+ * Compact site header
+ * Keep the Blocksy shell, but align the monogram and company name on one row.
+ */
+body.home header#header .ct-container,
+body.home header#header [data-row] > div,
+body.home .ct-header .ct-container,
+body.home .ct-header [data-row] > div {
+	width: min(calc(100% - 48px), 1240px) !important;
+	max-width: 1240px !important;
+	margin-inline: auto !important;
+}
+
+body.home [data-id="logo"] .site-logo-container,
+body.home [data-id="logo"] .site-branding,
+body.home .site-branding {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	gap: 11px !important;
+	width: auto !important;
+}
+
+body.home [data-id="logo"] .site-title,
+body.home .site-branding .site-title {
+	margin: 0 !important;
+	font-size: 17px !important;
+	font-weight: 800 !important;
+	line-height: 1.2 !important;
+	white-space: nowrap;
+}
+
+body.home [data-id="logo"] img,
+body.home .site-branding img {
+	width: 40px !important;
+	height: 40px !important;
+	object-fit: contain;
+}
+
+@media (max-width: 600px) {
+	body.home header#header .ct-container,
+	body.home header#header [data-row] > div,
+	body.home .ct-header .ct-container,
+	body.home .ct-header [data-row] > div {
+		width: min(calc(100% - 32px), 1240px) !important;
+	}
+}
+
+/*
+ * Tuma platform feature cards
+ * Keep this deliberately scoped to the homepage platform container so the
+ * rest of Elementor's containers and icon boxes remain untouched.
+ */
+.elementor-element.elementor-element-c62935 {
+	--tuma-accent: #a7ff00;
+	--tuma-ink: #0b1012;
+	--tuma-muted: #566069;
+	--tuma-border: rgba(11, 16, 18, 0.09);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 34px;
+	width: min(100%, 1240px);
+	margin-inline: auto;
+}
+
+.elementor-element-c62935 > .elementor-element-c4ad600 {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+	align-items: stretch;
+	width: 100% !important;
+}
+
+.elementor-element-c62935 > .elementor-element-69db28d {
+	width: min(100%, 820px) !important;
+	margin-inline: auto;
+	padding: 0 0 26px !important;
+	text-align: center;
+}
+
+.elementor-element-c62935 .elementor-element-210a1c06 {
+	margin: 0 0 14px !important;
+	color: #78b800;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.elementor-element-c62935 .elementor-element-210a1c06 p {
+	margin: 0;
+}
+
+.elementor-element-c62935 .elementor-element-a6ff19b {
+	margin: 0 0 18px !important;
+}
+
+.elementor-element-c62935 .elementor-element-a6ff19b .elementor-heading-title {
+	color: #17283b;
+	font-size: clamp(34px, 4vw, 48px);
+	font-weight: 700;
+	letter-spacing: -0.035em;
+	line-height: 1.12;
+}
+
+.elementor-element-c62935 .elementor-element-1c31caec {
+	width: min(100%, 720px);
+	margin: 0 auto !important;
+	color: #536477;
+	font-size: 16px;
+	line-height: 1.75;
+}
+
+.elementor-element-c62935 .elementor-element-1c31caec p {
+	margin: 0;
+}
+
+.elementor-element-c62935 > .elementor-element-b8a2b14,
+.elementor-element-c62935 > .elementor-element-5b96ab37 {
+	display: contents;
+}
+
+.elementor-element-c62935 .elementor-element-4033fa29 {
+	order: 1;
+}
+
+.elementor-element-c62935 .elementor-element-49073005 {
+	order: 2;
+}
+
+.elementor-element-c62935 .elementor-element-57a58f84 {
+	order: 3;
+}
+
+.elementor-element-c62935 .elementor-element-49bd9667 {
+	order: 5;
+}
+
+.elementor-element-c62935 .elementor-element-a11ce05 {
+	order: 4;
+}
+
+.elementor-element-c62935 .elementor-element-b22ce06 {
+	order: 6;
+}
+
+.elementor-element-c62935 .elementor-widget-icon-box {
+	height: 100%;
+	min-height: 340px;
+	margin: 0 !important;
+	padding: 34px 28px !important;
+	overflow: hidden;
+	border: 1px solid var(--tuma-border);
+	border-radius: 22px;
+	background: #fff !important;
+	box-shadow: 0 18px 50px rgba(11, 16, 18, 0.08) !important;
+	transition:
+		transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+		border-color 260ms ease,
+		box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-c62935 .elementor-widget-icon-box:hover,
+.elementor-element-c62935 .elementor-widget-icon-box:focus-within {
+	transform: translateY(-6px);
+	border-color: rgba(167, 255, 0, 0.7);
+	box-shadow: 0 24px 60px rgba(11, 16, 18, 0.13) !important;
+}
+
+.elementor-element-c62935 .elementor-icon-box-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 100%;
+	text-align: left;
+}
+
+.elementor-element-c62935 .elementor-icon-box-icon {
+	display: grid;
+	place-items: center;
+	width: 72px;
+	height: 72px;
+	margin: 0 0 30px !important;
+	border-radius: 18px;
+	background: var(--tuma-accent);
+	transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-c62935 .elementor-widget-icon-box:hover .elementor-icon-box-icon,
+.elementor-element-c62935 .elementor-widget-icon-box:focus-within .elementor-icon-box-icon {
+	transform: translateY(-2px) scale(1.06);
+}
+
+.elementor-element-c62935 .elementor-icon-box-icon .elementor-icon {
+	display: grid;
+	place-items: center;
+}
+
+.elementor-element-c62935 .elementor-icon-box-icon svg {
+	width: 44px !important;
+	height: 44px !important;
+}
+
+.elementor-element-c62935 .elementor-icon-box-icon img,
+.elementor-element-c62935 .elementor-icon-box-icon svg {
+	/*
+	 * Preserve the original black artwork and shift only its yellow accent
+	 * circle to the same green-yellow used by the hero button.
+	 */
+	filter: hue-rotate(30deg);
+}
+
+.elementor-element-c62935 .elementor-icon-box-title {
+	margin: 0 0 12px;
+	color: var(--tuma-ink);
+	font-size: 19px;
+	line-height: 1.25;
+}
+
+.elementor-element-c62935 .elementor-icon-box-description {
+	margin: 0;
+	color: var(--tuma-muted);
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+@media (max-width: 1024px) {
+	.elementor-element-c62935 > .elementor-element-c4ad600 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 20px;
+	}
+
+	.elementor-element.elementor-element-c62935 {
+		padding-inline: 24px;
+	}
+
+	.elementor-element-c62935 .elementor-widget-icon-box {
+		min-height: 310px;
+	}
+}
+
+@media (max-width: 600px) {
+	.elementor-element-c62935 > .elementor-element-c4ad600 {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.elementor-element.elementor-element-c62935 {
+		padding-inline: 16px;
+	}
+
+	.elementor-element-c62935 .elementor-widget-icon-box {
+		min-height: 0;
+		padding: 28px 24px !important;
+	}
+
+	.elementor-element-c62935 > .elementor-element-69db28d {
+		padding-bottom: 18px !important;
+	}
+
+	.elementor-element-c62935 .elementor-element-a6ff19b {
+		margin-bottom: 14px !important;
+	}
+
+	.elementor-element-c62935 .elementor-element-1c31caec {
+		font-size: 15px;
+		line-height: 1.65;
+	}
+
+	.elementor-element-c62935 .elementor-icon-box-wrapper {
+		align-items: center;
+		text-align: center;
+	}
+
+	.elementor-element-c62935 .elementor-icon-box-icon {
+		margin-bottom: 22px !important;
+	}
+}
+
+/*
+ * How it works
+ * Replaces only the former pricing header and pricing cards.
+ */
+.elementor-element-afa73c2 > .elementor-element-58cb2ad2,
+.elementor-element-afa73c2 > .elementor-element-31a8b22f,
+.elementor-element-afa73c2 > .elementor-element-3bd4ec5e {
+	margin-inline: auto !important;
+	text-align: center;
+}
+
+.elementor-element-afa73c2 > .elementor-element-3bd4ec5e {
+	width: min(100%, 720px);
+}
+
+.elementor-element-afa73c2 > .elementor-element-25e7ca7f {
+	display: grid !important;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 24px !important;
+	align-items: stretch;
+	width: min(100%, 1240px) !important;
+	margin-inline: auto;
+}
+
+.elementor-element-afa73c2 > .elementor-element-25e7ca7f::before {
+	display: none;
+}
+
+.elementor-element-25e7ca7f > .e-con {
+	position: relative;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: flex-start !important;
+	width: 100% !important;
+	min-height: 340px;
+	padding: 34px 28px !important;
+	overflow: hidden;
+	border: 1px solid rgba(11, 16, 18, 0.09) !important;
+	border-radius: 22px !important;
+	background: #fff !important;
+	box-shadow: 0 18px 50px rgba(11, 16, 18, 0.08) !important;
+	transition:
+		transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+		border-color 260ms ease,
+		box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-25e7ca7f > .e-con::after {
+	display: none;
+}
+
+.elementor-element-25e7ca7f > .e-con:hover,
+.elementor-element-25e7ca7f > .e-con:focus-within {
+	transform: translateY(-6px);
+	border-color: rgba(167, 255, 0, 0.7) !important;
+	box-shadow: 0 24px 58px rgba(11, 16, 18, 0.13) !important;
+}
+
+.elementor-element-25e7ca7f > .e-con > .elementor-widget-text-editor:first-child p {
+	transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-25e7ca7f > .e-con > .elementor-widget-icon:first-child {
+	width: 72px;
+	margin-bottom: 30px;
+}
+
+.elementor-element-25e7ca7f > .e-con > .elementor-widget-icon:first-child .elementor-icon {
+	display: grid;
+	place-items: center;
+	width: 72px;
+	height: 72px;
+	padding: 0;
+	border-radius: 50%;
+	background: #a7ff00;
+	color: #0b1012;
+	font-size: 28px;
+	transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-25e7ca7f > .e-con > .elementor-widget-icon:first-child svg {
+	width: 34px !important;
+	height: 34px !important;
+	fill: #0b1012 !important;
+}
+
+.elementor-element-25e7ca7f > .e-con > .elementor-widget-heading .elementor-heading-title {
+	margin: 0;
+	color: #0b1012 !important;
+	font-size: 19px !important;
+	font-weight: 700 !important;
+	line-height: 1.25 !important;
+}
+
+.elementor-element-25e7ca7f > .e-con > .elementor-widget-text-editor {
+	color: #566069 !important;
+	font-size: 15px !important;
+	line-height: 1.65 !important;
+}
+
+.elementor-element-25e7ca7f > .e-con > .elementor-widget-text-editor p {
+	margin-bottom: 0;
+}
+
+.elementor-element-25e7ca7f > .e-con:hover > .elementor-widget-icon:first-child .elementor-icon,
+.elementor-element-25e7ca7f > .e-con:focus-within > .elementor-widget-icon:first-child .elementor-icon {
+	transform: translateY(-2px) scale(1.06);
+}
+
+.elementor-element-25e7ca7f > .e-con:hover > .elementor-widget-text-editor:first-child p,
+.elementor-element-25e7ca7f > .e-con:focus-within > .elementor-widget-text-editor:first-child p {
+	transform: translateY(-2px) scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.elementor-element-c62935 .elementor-widget-icon-box,
+	.elementor-element-c62935 .elementor-icon-box-icon,
+	.elementor-element-25e7ca7f > .e-con,
+	.elementor-element-25e7ca7f > .e-con > .elementor-widget-text-editor:first-child p {
+		animation: none !important;
+		transition: none !important;
+		transform: none !important;
+	}
+}
+
+/*
+ * Site footer
+ * Light-theme footer inspired by the reference information architecture.
+ */
+.elementor-element.elementor-element-613b9b5c {
+	border-top: 1px solid rgba(99, 199, 0, 0.18);
+	background: #f7f9fa !important;
+}
+
+.elementor-element-613b9b5c > .elementor-element-613f100,
+.elementor-element-613b9b5c > .elementor-element-613f200 {
+	width: min(calc(100% - 48px), 1240px) !important;
+	margin-inline: auto;
+}
+
+.enviar-footer-brand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: #0b1012;
+	font-size: 17px;
+}
+
+.enviar-footer-brand span {
+	display: grid;
+	place-items: center;
+	width: 39px;
+	height: 39px;
+	border: 1px solid #63c700;
+	border-radius: 10px;
+	background: #0b1012;
+	color: #a7ff00;
+	font-family: Georgia, serif;
+	font-size: 20px;
+	line-height: 1;
+}
+
+.enviar-footer-brand strong {
+	font-weight: 800;
+}
+
+.elementor-element-613f112 p {
+	max-width: 390px;
+	margin: 0;
+	color: #526067;
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+.elementor-element-613f100 .elementor-heading-title {
+	color: #0b1012;
+	font-size: 15px;
+	font-weight: 800;
+	line-height: 1.3;
+}
+
+.enviar-footer-links {
+	display: grid;
+	gap: 11px;
+}
+
+.enviar-footer-links p {
+	margin: 0;
+}
+
+.enviar-footer-links a {
+	width: fit-content;
+	color: #526067;
+	font-size: 14px;
+	line-height: 1.45;
+	text-decoration: none;
+	transition:
+		color 180ms ease,
+		transform 180ms ease;
+}
+
+.enviar-footer-links a:hover,
+.enviar-footer-links a:focus-visible {
+	color: #397d00;
+	transform: translateX(3px);
+}
+
+.enviar-footer-legal {
+	margin: 0;
+	color: #66747a;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.enviar-footer-policy {
+	display: flex;
+	gap: 24px;
+}
+
+.enviar-footer-policy a {
+	color: #526067;
+	text-decoration: none;
+}
+
+.enviar-footer-policy a:hover,
+.enviar-footer-policy a:focus-visible {
+	color: #397d00;
+}
+
+@media (max-width: 1024px) {
+	.elementor-element-613f100 > .e-con:first-child {
+		width: 100% !important;
+	}
+
+	.elementor-element-613f100 > .e-con:not(:first-child) {
+		width: 30% !important;
+	}
+}
+
+@media (max-width: 600px) {
+	.elementor-element-613f100 > .e-con {
+		width: 100% !important;
+	}
+
+	.elementor-element-613f200 {
+		align-items: flex-start !important;
+		flex-direction: column !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.enviar-footer-links a {
+		transition: none;
+		transform: none;
+	}
+}
+
+@media (max-width: 1024px) {
+	.elementor-element-afa73c2 > .elementor-element-25e7ca7f {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 20px !important;
+	}
+
+	.elementor-element-afa73c2 > .elementor-element-25e7ca7f::before {
+		display: none;
+	}
+
+	.elementor-element-25e7ca7f > .e-con {
+		min-height: 310px;
+	}
+}
+
+@media (max-width: 600px) {
+	.elementor-element-afa73c2 > .elementor-element-25e7ca7f {
+		grid-template-columns: 1fr;
+		gap: 16px !important;
+	}
+
+	.elementor-element-25e7ca7f > .e-con {
+		width: 100% !important;
+		min-height: 0;
+		padding: 28px 24px !important;
+	}
+}
+
+/*
+ * Leadership and operations
+ * Self-contained replacement for the former template team area.
+ */
+.elementor-element-afa73c2 > .elementor-element-1ead000 {
+	width: 100% !important;
+	background: #f7f9fa !important;
+}
+
+.elementor-element-1ead000 > .elementor-element-1ead011,
+.elementor-element-1ead000 > .elementor-element-1ead012,
+.elementor-element-1ead000 > .elementor-element-1ead013 {
+	margin-inline: auto !important;
+	text-align: center;
+}
+
+.elementor-element-1ead000 > .elementor-element-1ead013 {
+	width: min(100%, 780px);
+}
+
+.elementor-element-1ead000 > .elementor-element-1ead020 {
+	width: min(100%, 1320px) !important;
+	margin-inline: auto;
+}
+
+.elementor-element-1ead020 > .e-con {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	background-color: #0b1012 !important;
+	transition:
+		transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+		border-color 260ms ease,
+		box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-1ead020 > .e-con::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(11, 16, 18, 0.08) 18%, rgba(11, 16, 18, 0.96) 82%);
+	pointer-events: none;
+}
+
+.elementor-element-1ead020 > .e-con:hover,
+.elementor-element-1ead020 > .e-con:focus-within {
+	transform: translateY(-6px);
+	border-color: rgba(99, 199, 0, 0.75) !important;
+	box-shadow: 0 28px 64px rgba(11, 16, 18, 0.22) !important;
+}
+
+.elementor-element-1ead020 .elementor-widget-text-editor,
+.elementor-element-1ead020 .elementor-widget-heading {
+	position: relative;
+	z-index: 1;
+}
+
+@media (max-width: 1024px) {
+	.elementor-element-1ead020 > .e-con:last-child {
+		width: 100% !important;
+	}
+}
+
+/*
+ * Card reveal: CSS-only so published cards never depend on Elementor's
+ * frontend animation observer to become visible.
+ */
+.elementor-element-c4ad600 > .elementor-invisible,
+.elementor-element-25e7ca7f > .elementor-invisible,
+.elementor-element-1ead020 > .elementor-invisible {
+	visibility: visible !important;
+}
+
+.elementor-element-c4ad600 > .elementor-widget-icon-box,
+.elementor-element-25e7ca7f > .e-con,
+.elementor-element-1ead020 > .e-con {
+	animation: enviar-card-reveal 640ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.elementor-element-c4ad600 > :nth-child(2),
+.elementor-element-25e7ca7f > :nth-child(2),
+.elementor-element-1ead020 > :nth-child(2) {
+	animation-delay: 80ms;
+}
+
+.elementor-element-c4ad600 > :nth-child(3),
+.elementor-element-25e7ca7f > :nth-child(3),
+.elementor-element-1ead020 > :nth-child(3) {
+	animation-delay: 160ms;
+}
+
+.elementor-element-c4ad600 > :nth-child(4),
+.elementor-element-25e7ca7f > :nth-child(4) {
+	animation-delay: 240ms;
+}
+
+.elementor-element-c4ad600 > :nth-child(5) {
+	animation-delay: 320ms;
+}
+
+.elementor-element-c4ad600 > :nth-child(6) {
+	animation-delay: 400ms;
+}
+
+@keyframes enviar-card-reveal {
+	from {
+		opacity: 0;
+		translate: 0 18px;
+	}
+
+	to {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.elementor-element-c4ad600 > .elementor-widget-icon-box,
+	.elementor-element-25e7ca7f > .e-con,
+	.elementor-element-1ead020 > .e-con {
+		animation: none !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		translate: none !important;
+		transform: none !important;
+	}
+}
+
+@media (max-width: 600px) {
+	.elementor-element-1ead020 > .e-con {
+		width: 100% !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.elementor-element-1ead020 > .e-con {
+		animation: none !important;
+		transition: none !important;
+		transform: none !important;
+	}
+}
+
+/*
+ * Logistics capabilities
+ * Scoped replacement for the former generic case-studies section.
+ */
+.elementor-element.elementor-element-51e82cd3 {
+	background: #f7f9fa !important;
+	background-image: url("https://startersites.io/elementor/web-agency/wp-content/uploads/2021/07/decorative-shape-2.svg") !important;
+	background-repeat: no-repeat !important;
+	background-position: top left !important;
+	background-size: 850px auto !important;
+}
+
+.elementor-element-51e82cd3 > .elementor-element-7c96f295,
+.elementor-element-51e82cd3 > .elementor-element-1069f3fe,
+.elementor-element-51e82cd3 > .elementor-element-5b4f9624 {
+	margin-inline: auto !important;
+	text-align: center;
+}
+
+.elementor-element-51e82cd3 .elementor-element-1069f3fe .elementor-heading-title {
+	color: #0b1012;
+}
+
+.elementor-element-51e82cd3 > .elementor-element-5b4f9624 {
+	width: min(100%, 760px);
+}
+
+.elementor-element-51e82cd3 .elementor-element-4a4e2e50 {
+	width: min(100%, 1320px);
+	margin-inline: auto;
+}
+
+.elementor-element-51e82cd3 .elementor-element-4a4e2e50 > .e-con {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 18px 44px rgba(11, 16, 18, 0.12);
+	transition:
+		transform 220ms ease,
+		box-shadow 220ms ease;
+}
+
+.elementor-element-51e82cd3 .elementor-element-4a4e2e50 > .e-con:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 24px 56px rgba(11, 16, 18, 0.18);
+}
+
+.elementor-element-51e82cd3 .elementor-element-4a4e2e50 > .e-con::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: auto 0 0;
+	height: 72%;
+	background: linear-gradient(180deg, transparent 0%, rgba(17, 23, 25, 0.94) 100%);
+	pointer-events: none;
+}
+
+.elementor-element-51e82cd3 .elementor-element-4a4e2e50 .elementor-widget-text-editor,
+.elementor-element-51e82cd3 .elementor-element-4a4e2e50 .elementor-widget-heading {
+	position: relative;
+	z-index: 1;
+}
+
+@media (max-width: 1024px) {
+	.elementor-element.elementor-element-51e82cd3 {
+		background-size: 600px auto !important;
+	}
+
+	.elementor-element-51e82cd3 .elementor-element-4a4e2e50 > .e-con:last-child {
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.elementor-element.elementor-element-51e82cd3 {
+		background-size: 400px auto !important;
+	}
+
+	.elementor-element-51e82cd3 .elementor-element-4a4e2e50 > .e-con {
+		width: 100% !important;
+	}
+}
+
+/*
+ * Network benefits
+ * Light-theme replacement for the former template testimonials.
+ */
+.elementor-element.elementor-element-3339622c {
+	background-color: #f7f9fa !important;
+	background-image:
+		radial-gradient(circle at 92% 18%, rgba(99, 199, 0, 0.07), transparent 23%),
+		linear-gradient(145deg, transparent 0 76%, rgba(11, 16, 18, 0.025) 76% 100%) !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: cover !important;
+}
+
+.elementor-element-3339622c > .elementor-element-333c000 {
+	width: min(100%, 1240px) !important;
+	margin-inline: auto;
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+.elementor-element-333c000 .elementor-element-333a001,
+.elementor-element-333c000 .elementor-element-333b001 {
+	min-width: 0;
+}
+
+.enviar-benefits {
+	display: grid;
+	gap: 17px;
+}
+
+.enviar-benefits p {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	margin: 0;
+	color: #273238;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.55;
+}
+
+.enviar-benefits span {
+	display: inline-grid;
+	flex: 0 0 22px;
+	place-items: center;
+	width: 22px;
+	height: 22px;
+	margin-top: 1px;
+	border-radius: 50%;
+	background: #a7ff00;
+	color: #0b1012;
+	font-size: 13px;
+	font-weight: 900;
+}
+
+.elementor-element-333c000 .elementor-element-333b001 {
+	overflow: hidden;
+	max-width: 560px;
+	margin-inline: auto;
+	transition:
+		transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+		box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-333c000 .elementor-element-333b001:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 22px 48px rgba(11, 16, 18, 0.14) !important;
+}
+
+.enviar-network-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1.08;
+	object-fit: cover;
+}
+
+/* Trusted Companies counter: replace the template blue with site green. */
+.elementor-element-4ed2fe10 .elementor-element-1f213f98 .elementor-counter-number-wrapper,
+.elementor-element-4ed2fe10 .elementor-element-1f213f98 .elementor-counter-number,
+.elementor-element-4ed2fe10 .elementor-element-1f213f98 .elementor-counter-number-suffix {
+	color: #63c700 !important;
+}
+
+.elementor-element-4ed2fe10 .elementor-element-1f213f98 .elementor-counter-title {
+	color: #0b1012 !important;
+}
+
+@media (max-width: 1024px) {
+	.elementor-element.elementor-element-3339622c {
+		background-size: cover !important;
+	}
+
+	.elementor-element-333c000 .elementor-element-333a001,
+	.elementor-element-333c000 .elementor-element-333b001 {
+		width: 100% !important;
+	}
+
+	.enviar-network-image {
+		max-height: 520px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.elementor-element-333c000 .elementor-element-333b001 {
+		transition: none !important;
+		transform: none !important;
+	}
+}
+
+/*
+ * Demo request panel
+ * Functional replacement for the former generic project CTA.
+ */
+.elementor-element.elementor-element-4e96004d {
+	background: #f7f9fa;
+}
+
+.elementor-element-4e96004d > .elementor-element-476bf5f1 {
+	width: min(100%, 1160px) !important;
+	margin-inline: auto;
+	padding: 0 !important;
+	background: transparent !important;
+}
+
+.enviar-demo-panel {
+	display: grid;
+	grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+	overflow: hidden;
+	border: 1px solid #dde5d3;
+	border-radius: 24px;
+	background: #fff;
+	box-shadow: 0 24px 65px rgba(11, 16, 18, 0.12);
+}
+
+.enviar-demo-copy {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 56px 48px;
+	background: #f0f5ec;
+}
+
+.enviar-demo-eyebrow {
+	margin: 0 0 15px;
+	color: #63c700;
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.075em;
+	text-transform: uppercase;
+}
+
+.enviar-demo-copy h2 {
+	margin: 0 0 18px;
+	color: #0b1012;
+	font-size: clamp(30px, 3vw, 42px);
+	font-weight: 700;
+	letter-spacing: -0.035em;
+	line-height: 1.12;
+}
+
+.enviar-demo-intro {
+	margin: 0 0 28px;
+	color: #53616a;
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+.enviar-demo-copy ul {
+	display: grid;
+	gap: 14px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.enviar-demo-copy li {
+	position: relative;
+	margin: 0;
+	padding-left: 28px;
+	color: #273238;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.enviar-demo-copy li::before {
+	content: "✓";
+	position: absolute;
+	top: 1px;
+	left: 0;
+	display: grid;
+	place-items: center;
+	width: 19px;
+	height: 19px;
+	border-radius: 50%;
+	background: #a7ff00;
+	color: #0b1012;
+	font-size: 11px;
+	font-weight: 900;
+}
+
+.enviar-demo-form-wrap {
+	padding: 48px;
+	background: #fff;
+}
+
+.enviar-demo-form {
+	display: grid;
+	gap: 17px;
+}
+
+.enviar-demo-row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.enviar-demo-form label {
+	display: grid;
+	gap: 8px;
+	margin: 0;
+	color: #0b1012;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.enviar-demo-form input,
+.enviar-demo-form select {
+	width: 100%;
+	min-height: 48px;
+	margin: 0;
+	padding: 11px 14px;
+	border: 1px solid #d9e1e3;
+	border-radius: 10px;
+	background: #f7f9fa;
+	color: #0b1012;
+	font: inherit;
+	font-weight: 500;
+	outline: none;
+	transition:
+		border-color 180ms ease,
+		box-shadow 180ms ease,
+		background-color 180ms ease;
+}
+
+.enviar-demo-form input:focus,
+.enviar-demo-form select:focus {
+	border-color: #63c700;
+	background: #fff;
+	box-shadow: 0 0 0 3px rgba(99, 199, 0, 0.14);
+}
+
+.enviar-demo-form button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	min-height: 50px;
+	margin-top: 4px;
+	border: 0;
+	border-radius: 10px;
+	background: #a7ff00;
+	color: #0b1012;
+	font-size: 15px;
+	font-weight: 800;
+	cursor: pointer;
+	box-shadow: 0 10px 24px rgba(99, 199, 0, 0.2);
+	transition:
+		transform 200ms ease,
+		background-color 200ms ease,
+		box-shadow 200ms ease;
+}
+
+.enviar-demo-form button:hover,
+.enviar-demo-form button:focus-visible {
+	transform: translateY(-2px);
+	background: #95e800;
+	box-shadow: 0 14px 30px rgba(99, 199, 0, 0.28);
+}
+
+.enviar-demo-consent {
+	margin: -2px 0 0;
+	color: #718087;
+	font-size: 11px;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.enviar-demo-notice {
+	margin: 0 0 18px;
+	padding: 12px 14px;
+	border-radius: 9px;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.enviar-demo-notice.is-success {
+	background: rgba(99, 199, 0, 0.12);
+	color: #397700;
+}
+
+.enviar-demo-notice.is-error {
+	background: #fff1f1;
+	color: #9b2525;
+}
+
+.enviar-demo-hp {
+	position: absolute !important;
+	left: -9999px !important;
+}
+
+@media (max-width: 820px) {
+	.enviar-demo-panel {
+		grid-template-columns: 1fr;
+	}
+
+	.enviar-demo-copy,
+	.enviar-demo-form-wrap {
+		padding: 38px 32px;
+	}
+}
+
+@media (max-width: 520px) {
+	.enviar-demo-row {
+		grid-template-columns: 1fr;
+	}
+
+	.enviar-demo-copy,
+	.enviar-demo-form-wrap {
+		padding: 30px 22px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.enviar-demo-form button {
+		transition: none;
+		transform: none;
+	}
+}
+
+/*
+ * Logistics insights
+ * Static resource cards replacing the placeholder WordPress blog feed.
+ */
+.elementor-element.elementor-element-361aec33 {
+	padding-inline: 24px !important;
+	background: #f7f9fa !important;
+}
+
+.elementor-element-361aec33 > .elementor-element-361a001,
+.elementor-element-361aec33 > .elementor-element-68710fa8,
+.elementor-element-361aec33 > .elementor-element-2bfd21b4 {
+	margin-inline: auto !important;
+	text-align: center;
+}
+
+.elementor-element-361aec33 > .elementor-element-2bfd21b4 {
+	width: min(100%, 720px);
+}
+
+.elementor-element-361aec33 > .elementor-element-361a100 {
+	width: min(100%, 1240px) !important;
+	margin-inline: auto;
+}
+
+.elementor-element-361a100 > .e-con {
+	overflow: hidden;
+	background: #fff !important;
+	transition:
+		transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+		border-color 260ms ease,
+		box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-361a100 > .e-con:hover,
+.elementor-element-361a100 > .e-con:focus-within {
+	transform: translateY(-6px);
+	border-color: rgba(99, 199, 0, 0.65) !important;
+	box-shadow: 0 26px 62px rgba(11, 16, 18, 0.14) !important;
+}
+
+.elementor-element-361a100 > .e-con > .e-con:first-child {
+	min-height: 220px !important;
+	overflow: hidden;
+	background-position: center !important;
+	background-size: cover !important;
+	transition: scale 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-element-361a100 > .e-con:hover > .e-con:first-child,
+.elementor-element-361a100 > .e-con:focus-within > .e-con:first-child {
+	scale: 1.035;
+}
+
+@media (max-width: 1024px) {
+	.elementor-element-361a100 > .e-con:last-child {
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 600px) {
+	.elementor-element.elementor-element-361aec33 {
+		padding-inline: 16px !important;
+	}
+
+	.elementor-element-361a100 > .e-con {
+		width: 100% !important;
+	}
+
+	.elementor-element-613b9b5c > .elementor-element-613f100,
+	.elementor-element-613b9b5c > .elementor-element-613f200 {
+		width: min(calc(100% - 32px), 1240px) !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.elementor-element-361a100 > .e-con,
+	.elementor-element-361a100 > .e-con > .e-con:first-child {
+		transition: none !important;
+		transform: none !important;
+		scale: 1 !important;
+	}
+}
+
+/* The Elementor footer replaces Blocksy's default footer on the homepage. */
+body.home footer.ct-footer,
+body.home #footer.ct-footer,
+body.home footer#footer,
+body.home footer.site-footer,
+body.home #main-container > footer,
+body.home .site-main + footer,
+body.home [data-id="type-1"].ct-footer {
+	display: none !important;
+}
+
+/*
+ * Skip off-screen rendering for heavier lower-page sections. Unsupported
+ * browsers safely ignore these progressive performance declarations.
+ */
+body:not(.elementor-editor-active) .elementor-element-51e82cd3,
+body:not(.elementor-editor-active) .elementor-element-afa73c2,
+body:not(.elementor-editor-active) .elementor-element-3339622c,
+body:not(.elementor-editor-active) .elementor-element-4e96004d,
+body:not(.elementor-editor-active) .elementor-element-361aec33 {
+	content-visibility: auto;
+}
+
+body:not(.elementor-editor-active) .elementor-element-51e82cd3 {
+	contain-intrinsic-size: auto 1200px;
+}
+
+body:not(.elementor-editor-active) .elementor-element-afa73c2 {
+	contain-intrinsic-size: auto 1700px;
+}
+
+body:not(.elementor-editor-active) .elementor-element-3339622c,
+body:not(.elementor-editor-active) .elementor-element-4e96004d {
+	contain-intrinsic-size: auto 760px;
+}
+
+body:not(.elementor-editor-active) .elementor-element-361aec33 {
+	contain-intrinsic-size: auto 950px;
+}
+
+/*
+ * Services page — retain the imported Elementor composition while replacing
+ * the agency palette and content with Enviar's logistics design system.
+ */
+.page-id-1434 {
+	--enviar-ink: #0b1012;
+	--enviar-surface: #f7f9fa;
+	--enviar-muted: #526067;
+	--enviar-border: #dce3ec;
+	--enviar-green: #63c700;
+	--enviar-lime: #a7ff00;
+}
+
+.page-id-1434 .elementor-1434 {
+	color: var(--enviar-muted);
+	background: var(--enviar-surface);
+}
+
+.page-id-1434 .elementor-element-79ee1ff {
+	position: relative;
+	isolation: isolate;
+	background-image:
+		linear-gradient(90deg, rgba(11, 16, 18, 0.78), rgba(11, 16, 18, 0.24)),
+		url("assets/images/services-hero-logistics.jpg") !important;
+	background-position: center !important;
+	background-size: cover !important;
+}
+
+.page-id-1434 .elementor-element-79ee1ff::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	border-radius: inherit;
+	background: linear-gradient(120deg, rgba(18, 49, 58, 0.2), transparent 58%);
+}
+
+.page-id-1434 .elementor-element-1becb30 > .e-con-inner {
+	align-items: flex-start !important;
+}
+
+.page-id-1434 .elementor-element-2b6325b .elementor-heading-title {
+	max-width: 660px;
+	color: #fff !important;
+	font-size: clamp(38px, 5vw, 60px) !important;
+	letter-spacing: -0.04em;
+	line-height: 1.05 !important;
+}
+
+.enviar-services-breadcrumb {
+	margin: 0 0 22px;
+	color: var(--enviar-lime);
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+}
+
+.enviar-services-hero-copy {
+	max-width: 650px;
+	margin: 20px 0 0;
+	color: rgba(255, 255, 255, 0.88);
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+.page-id-1434 .elementor-element-96421f9,
+.page-id-1434 .elementor-element-5beda29,
+.page-id-1434 .elementor-element-6ed4d7f {
+	color: var(--enviar-green) !important;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.page-id-1434 .elementor-heading-title,
+.page-id-1434 .elementor-icon-box-title {
+	color: var(--enviar-ink) !important;
+}
+
+.page-id-1434 .elementor-element-f037e7f,
+.page-id-1434 .elementor-element-096d16f,
+.page-id-1434 .elementor-element-3ae2f9a,
+.page-id-1434 .elementor-icon-box-description {
+	color: var(--enviar-muted) !important;
+}
+
+.page-id-1434 .elementor-element-59d71cc .elementor-widget-icon-box {
+	border: 1px solid var(--enviar-border);
+	border-radius: 20px;
+	background: #fff;
+	box-shadow: 0 16px 42px rgba(11, 16, 18, 0.06);
+	transition:
+		transform 240ms ease,
+		border-color 240ms ease,
+		box-shadow 240ms ease;
+}
+
+.page-id-1434 .elementor-element-59d71cc .elementor-widget-icon-box:hover {
+	transform: translateY(-5px);
+	border-color: rgba(99, 199, 0, 0.52);
+	box-shadow: 0 22px 52px rgba(11, 16, 18, 0.11);
+}
+
+.page-id-1434 .elementor-element-59d71cc .elementor-icon-box-icon {
+	display: grid;
+	place-items: center;
+	width: 68px;
+	height: 68px;
+	margin-bottom: 28px !important;
+	border-radius: 18px;
+	background: rgba(99, 199, 0, 0.1);
+}
+
+.page-id-1434 .elementor-element-59d71cc .elementor-icon {
+	color: #12313a !important;
+	font-size: 30px;
+}
+
+.page-id-1434 .elementor-element-59d71cc .elementor-icon i {
+	line-height: 1;
+}
+
+.page-id-1434 .elementor-element-d300dc4 img,
+.page-id-1434 .elementor-element-0be0d7d img {
+	width: 100%;
+	aspect-ratio: 1.22;
+	object-fit: cover;
+	border-radius: 22px;
+	box-shadow: 0 20px 50px rgba(11, 16, 18, 0.1);
+}
+
+.page-id-1434 .elementor-element-5deb871 .elementor-counter {
+	text-align: left;
+}
+
+.page-id-1434 .enviar-capability-value {
+	margin-bottom: 7px;
+	color: var(--enviar-green);
+	font-size: clamp(23px, 2.3vw, 34px);
+	font-weight: 800;
+	letter-spacing: -0.035em;
+	line-height: 1.1;
+}
+
+.page-id-1434 .elementor-element-5deb871 .elementor-counter-title {
+	color: var(--enviar-ink);
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.page-id-1434 .elementor-element-61da919 .elementor-accordion-item {
+	border-color: var(--enviar-border);
+	background: #fff;
+}
+
+.page-id-1434 .elementor-element-61da919 .elementor-tab-title {
+	color: var(--enviar-ink);
+	font-weight: 700;
+}
+
+.page-id-1434 .elementor-element-61da919 .elementor-tab-title:hover,
+.page-id-1434 .elementor-element-61da919 .elementor-tab-title.elementor-active {
+	color: #397d00;
+}
+
+.page-id-1434 .elementor-element-61da919 .elementor-tab-content {
+	color: var(--enviar-muted);
+	line-height: 1.7;
+}
+
+/* Pricing is intentionally removed from Services. */
+.page-id-1434 .elementor-element-01afc5f {
+	display: none !important;
+}
+
+.page-id-1434 .elementor-element-dd28aad > .e-con-inner {
+	gap: 18px !important;
+}
+
+.page-id-1434 .elementor-element-dd28aad > .e-con-inner > .elementor-element {
+	flex: 1 1 170px;
+	width: auto !important;
+}
+
+.enviar-service-proof {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-height: 84px;
+	padding: 16px 18px;
+	border: 1px solid var(--enviar-border);
+	border-radius: 14px;
+	background: #fff;
+}
+
+.enviar-service-proof i {
+	display: grid;
+	flex: 0 0 38px;
+	place-items: center;
+	width: 38px;
+	height: 38px;
+	border-radius: 11px;
+	background: rgba(99, 199, 0, 0.1);
+	color: #12313a;
+}
+
+.enviar-service-proof span {
+	display: grid;
+	color: var(--enviar-muted);
+	font-size: 13px;
+	line-height: 1.35;
+}
+
+.enviar-service-proof strong {
+	color: var(--enviar-ink);
+	font-size: 14px;
+}
+
+.page-id-1434 .elementor-element-7933878 {
+	border: 1px solid var(--enviar-border);
+	background: #fff !important;
+	box-shadow: 0 18px 48px rgba(11, 16, 18, 0.07);
+}
+
+.page-id-1434 .elementor-element-fcc27da .elementor-heading-title {
+	font-size: clamp(30px, 3vw, 42px) !important;
+}
+
+.enviar-services-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	min-height: 50px;
+	padding: 13px 24px;
+	border-radius: 10px;
+	background: var(--enviar-lime);
+	color: var(--enviar-ink) !important;
+	font-weight: 800;
+	text-decoration: none !important;
+	box-shadow: 0 12px 28px rgba(99, 199, 0, 0.2);
+	transition:
+		transform 200ms ease,
+		background-color 200ms ease;
+}
+
+.enviar-services-cta:hover,
+.enviar-services-cta:focus-visible {
+	transform: translateY(-2px);
+	background: #95e800;
+}
+
+.page-id-1434 .elementor-button,
+.page-id-1434 button[type="submit"] {
+	border-color: var(--enviar-lime) !important;
+	background: var(--enviar-lime) !important;
+	color: var(--enviar-ink) !important;
+}
+
+/* Remove Blocksy's theme attribution; the custom Enviar footer remains. */
+.ct-footer [data-id="copyright"],
+.ct-footer .ct-footer-copyright,
+.site-footer .site-info {
+	display: none !important;
+}
+
+@media (max-width: 767px) {
+	.page-id-1434 .elementor-element-2b6325b .elementor-heading-title {
+		font-size: 38px !important;
+	}
+
+	.page-id-1434 .elementor-element-5deb871 .elementor-counter {
+		text-align: center;
+	}
+
+	.enviar-service-proof {
+		min-height: 72px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.page-id-1434 .elementor-element-59d71cc .elementor-widget-icon-box,
+	.enviar-services-cta {
+		transition: none;
+		transform: none;
+	}
+}
